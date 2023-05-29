@@ -54,7 +54,16 @@ interface GetReviewsResponse {
 }
 
 const reviewEndpointHandler: NextApiHandler = async (req, res) => {
-  res.status(405).end();
+  if (req.method === "POST") {
+    const result = (await db.query( `INSERT INTO review (productId, rating, comment, timestamp)
+    VALUES ($1, $2, $3, $4) RETURNING id, productId, rating, comment, timestamp as "createdAt"`,
+    [req.body.productId, req.body.rating, req.body.review, new Date()]))
+    const response: GetReviewsResponse = {
+      success: true,
+      reviews: result[0]
+    }
+    res.status(200).json(response);
+  }
 };
 
 export default reviewEndpointHandler;
