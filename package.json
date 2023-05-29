@@ -1,0 +1,35 @@
+{
+  "name": "keep-fullstack-test-new",
+  "version": "1.0.1",
+  "scripts": {
+    "dev": "next",
+    "predev": "node -r @swc-node/register ./db/migrations/index",
+    "build": "next build",
+    "start": "next start",
+    "post-update": "yarn upgrade --latest"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.0.0",
+    "dotenv": "^16.0.3",
+    "next": "12.3.1",
+    "node-fetch": "^2.6.11",
+    "pg": "^8.10.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-node": "^10.9.1"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "description": "",
+  "devDependencies": {
+    "@swc-node/register": "^1.6.5",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.57",
+    "@types/node": "18.11.4",
+    "@types/react": "18.0.22",
+    "typescript": "4.8.4"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
