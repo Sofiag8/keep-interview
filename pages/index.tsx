@@ -11,7 +11,6 @@ const IndexPage = () => {
           <Link href="/products">
             <button style={{ alignSelf: "center" }}>View products</button>
           </Link>
-
           <Link href="/example?sample=1&params=true">
             <button style={{ alignSelf: "center" }}>
               View example page for code hints

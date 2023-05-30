@@ -4,7 +4,6 @@ import StarRating from "./StarRating";
 interface Props {
   review: ReviewType;
 }
-
 const Review = ({ review }: Props) => {
   debugger;
   return (

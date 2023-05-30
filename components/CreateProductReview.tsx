@@ -16,7 +16,6 @@ const CreateProductReview = ({
   const [rating, setRating] = useState(0); // [1, 2, 3, 4, 5]
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (review.trim() === "" || rating === 0) {
       return;
     }
@@ -28,7 +27,7 @@ const CreateProductReview = ({
     })
       .then((res) => res.json())
       .then((data) => {
-        onProductReviewCreated(data.review as Review);
+        onProductReviewCreated(data.reviews as Review);
         setReview("");
         setRating(0);
       });

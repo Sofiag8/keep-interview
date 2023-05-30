@@ -21,7 +21,6 @@ export const getServerSideProps: GetServerSideProps = async ({
     // Fetch product data from API
     const result = await fetch(`http://localhost:5003/api/product/${id}`);
     const data = (await result.json()) as Product;
-
     return {
       props: {
         data,
